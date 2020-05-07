@@ -16,12 +16,12 @@ const EventComponent = (props) => {
     return seconds;
   };
 
-  const formatDate = (date) => {
-    var date = new Date(date);
-    var tahun = date.getFullYear();
-    var bulan = date.getMonth();
-    var tanggal = date.getDate();
-    var hari = date.getDay();
+  const formatDate = (dateRaw) => {
+    let d = new Date(dateRaw);
+    let tahun = d.getFullYear();
+    let bulan = d.getMonth();
+    let tanggal = d.getDate();
+    let hari = d.getDay();
 
     switch (hari) {
       case 0:
@@ -85,7 +85,7 @@ const EventComponent = (props) => {
         bulan = 'Desember';
         break;
     }
-    var tampilTanggal = hari + ', ' + tanggal + ' ' + bulan + ' ' + tahun;
+    let tampilTanggal = hari + ', ' + tanggal + ' ' + bulan + ' ' + tahun;
 
     return tampilTanggal;
   };

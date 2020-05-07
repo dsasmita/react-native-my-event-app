@@ -17,6 +17,12 @@ const HomeScreen = (props) => {
       return seconds > 0;
     });
 
+    eventsShow.sort(function (a, b) {
+      var dateA = new Date(a.date_time),
+        dateB = new Date(b.date_time);
+      return dateA - dateB;
+    });
+
     return (
       <FlatList
         data={eventsShow}
